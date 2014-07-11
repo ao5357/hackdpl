@@ -5,13 +5,9 @@ core = 7.x
 
 regions[header] = Header
 regions[nav] = Navigation
-regions[post_header] = Post-header
-regions[cta] = Calls to Action
-regions[cta_bottom] = Calls to Action Bottom
 regions[content_top] = Content Top
 regions[content] = Content
 regions[content_bottom] = Content Bottom
-regions[pre_footer] = Pre-footer
 regions[footer] = Footer
 
 ; Hidden but required

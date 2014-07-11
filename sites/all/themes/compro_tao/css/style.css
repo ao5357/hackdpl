@@ -4,17 +4,6 @@
  *
  * Colors:
  *   #fff    - White
- *   #eee    - Very light gray (body background)
- *   #ccc    - Medium gray (all over the place)
- *   #888    - Gray
- *   #666    - Gray
- *   #444    - Dark gray
- *   #1181ce - Light blue
- *   #0b5182 - Blue
- *   #0a2436 - Dark blue
- *   #7a121c - Dark red (accent color)
- *
- * Fonts:
  */
 
 /**
@@ -47,20 +36,6 @@
   font-weight: bold;
   src: url('fonts/SourceSansPro-BoldIt.eot');
   src: url('fonts/SourceSansPro-BoldIt.eot?') format('eot'), url('fonts/SourceSansPro-BoldIt.woff') format('woff');
-}
-@font-face {
-  font-family: 'notoserif';
-  font-style: normal;
-  font-weight: normal;
-  src: url('fonts/notoserif.eot');
-  src: url('fonts/notoserif.eot?') format('eot'), url('fonts/notoserif.woff') format('woff');
-}
-@font-face {
-  font-family: 'notoserif';
-  font-style: normal;
-  font-weight: bold;
-  src: url('fonts/notoserif-bold.eot');
-  src: url('fonts/notoserif-bold.eot?') format('eot'), url('fonts/notoserif-bold.woff') format('woff');
 }
 
 /**
@@ -130,9 +105,7 @@ dl {}
 
 /*-Heading-*/
 /* Declare the font-family for non-body-specified stuff here. */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'notoserif', Georgia, serif;
-}
+h1, h2, h3, h4, h5, h6 {}
 h1 {
   font-size: 3em;
   font-weight: 400;
@@ -1773,19 +1746,15 @@ div.pager {
       max-width: 180px;
     }
   }
-.footer-regions {
-  clear: both;
-  overflow: hidden;
+.region-footer {
+  background: #444;
+  background: rgba(34,34,34,.9);
+  color: #fff;
+  border-top: 3px solid #0b5182;
 }
-  .region-footer {
-    background: #444;
-    background: rgba(34,34,34,.9);
-    color: #fff;
-    border-top: 3px solid #0b5182;
+  .region-footer > .inner {
+    padding: 30px 0;
   }
-    .region-footer > .inner {
-      padding: 30px 0;
-    }
     .region-footer .abridged-main {
       max-width: 550px;
     }
@@ -1832,14 +1801,5 @@ div.pager {
     .region-footer .block {
       margin: .1em 0 .5em;
     }
-    .region-footer .footer-cta, .region-footer .footer-phone-block {
-      clear: both;
-      float: none;
-      margin: .1em 0 .5em;
-    }
   }
-  @media screen and (max-width: 300px) {
-    .footer-phone a {
-      font-size: 1.3em;
-    }
-  }
+
