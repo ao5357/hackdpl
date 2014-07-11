@@ -1,0 +1,30 @@
+name = Compro Tao
+description = Custom Tao subtheme, delivered by Commercial Progression
+base theme = tao
+core = 7.x
+
+regions[header] = Header
+regions[nav] = Navigation
+regions[post_header] = Post-header
+regions[cta] = Calls to Action
+regions[cta_bottom] = Calls to Action Bottom
+regions[content_top] = Content Top
+regions[content] = Content
+regions[content_bottom] = Content Bottom
+regions[pre_footer] = Pre-footer
+regions[footer] = Footer
+
+; Hidden but required
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+
+scripts[] = js/behaviors.js
+scripts[] = js/jquery.tipsy.js
+stylesheets[screen][] = css/style.css
+
+; override tao
+stylesheets[all][] = reset.css
+stylesheets[all][] = base.css
+stylesheets[screen][] = drupal.css
+; other overrides
+stylesheets[all][] = field_collection.theme.css

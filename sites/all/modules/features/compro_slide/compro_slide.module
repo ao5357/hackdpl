@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the compro_slide feature.
+ */
+
+include_once 'compro_slide.features.inc';

@@ -1,0 +1,20 @@
+.views-field-excluded {
+  color: #888;
+}
+
+#content-top .block {
+  border: 1px solid #ccc;
+  margin: 0 0 15px;
+  padding: 5px 15px;
+}
+
+#dashboard {}
+  #dashboard .dashboard-region .block {
+    border: 1px solid #888;
+  }
+  #dashboard div.block h2 {
+    background: #888;
+    color: #fff;
+    font-size: 2em;
+    padding: 10px;
+  }

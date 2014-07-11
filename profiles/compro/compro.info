@@ -1,0 +1,46 @@
+name = Compro Install Profile
+core = 7.x
+description = A custom install profile extending buildkit.
+
+; Core
+dependencies[] = block
+dependencies[] = contextual
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+dependencies[] = comment
+
+; Contrib
+dependencies[] = context
+dependencies[] = context_ui
+dependencies[] = ctools
+dependencies[] = devel
+dependencies[] = diff
+dependencies[] = features
+dependencies[] = strongarm
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = module_filter
+dependencies[] = admin_menu
+dependencies[] = token
+dependencies[] = pathauto
+dependencies[] = metatag
+dependencies[] = fe_block
+dependencies[] = block_class
+dependencies[] = entity
+dependencies[] = globalredirect
+dependencies[] = adminimal_admin_menu
+dependencies[] = blockify
+
+; Custom
+dependencies[] = compro_custom

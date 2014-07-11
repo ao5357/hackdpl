@@ -1,0 +1,40 @@
+<?php
+/**
+ * @file
+ * Module file for list_text_filter.
+ */
+
+/**
+ * Implements hook_filter_info().
+ */
+function list_text_filter_filter_info() {
+  $filters['filter_list'] = array(
+    'title' => t('List text filter'),
+    'description' => t('Every newline in the text will be formatted as a list item in an unordered list.'),
+    'process callback' => '_list_text_filter_filter_list_process',
+    'tips callback' => '_list_text_filter_filter_list_tips',
+  );
+  return $filters;
+}
+
+/**
+ * List text filter process callback.
+ */
+function _list_text_filter_filter_list_process($text, $filter) {
+  $output = '<ul class="list-text-filter">';
+  $lines = explode("\n", $text);
+  foreach ($lines as $line) {
+    if (strlen(trim($line)) >= 1) {
+      $output .= '<li>' . $line . '</li>';
+    }
+  }
+  return $output . '</ul>';
+}
+
+
+/**
+ * Filter tips callback for list text filter.
+ */
+function _list_text_filter_filter_list_tips($filter, $format, $long = FALSE) {
+  return t('Every newline in the text will be formatted as a list item in an unordered list.');
+}

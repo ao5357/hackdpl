@@ -1,0 +1,4 @@
+name = GET arguments
+description = Enables GET parameters in Views contextual filters.
+core = 7.x
+dependencies[] = views

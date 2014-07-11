@@ -1,0 +1,21 @@
+name = Compro Adminimal
+description = Customized Adminimal subtheme for Commercial Progression.
+base theme = adminimal
+core = 7.x
+
+stylesheets[screen][] = css/compro_adminimal.css
+
+settings[shortcut_module_link] = 1
+settings[display_icons_config] = 1
+
+regions[content_top] = Content Top
+regions[content] = Content
+regions[help] = Help
+
+; Required regions
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+
+; Hide the sidebar (we don't want it)
+regions[sidebar_first] = First sidebar
+regions_hidden[] = sidebar_first

@@ -1,0 +1,112 @@
+<?php
+/**
+ * @file
+ * Module file for display_text_formats. 'administer filters'
+ */
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function display_text_formats_field_formatter_info() {
+  return array(
+    'text_formats' => array(
+      'label' => t('Custom Format'),
+      'field types' => array('text', 'text_long', 'text_with_summary'),
+      'settings' => array(
+        'trim_length' => 600,
+        'intelligent_trim' => 1,
+        'text_format' => 'plain_text',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function display_text_formats_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $element = array();
+
+  if ($display['type'] === 'text_formats') {
+    $element['trim_length'] = array(
+      '#title' => t('Trim length'),
+      '#type' => 'textfield',
+      '#size' => 10,
+      '#default_value' => $settings['trim_length'],
+      '#element_validate' => array('element_validate_integer_positive'),
+      '#required' => TRUE,
+    );
+
+    // Checkbox whether or not to trim intelligently.
+    $element['intelligent_trim'] = array(
+      '#title' => t('Use intelligent trim'),
+      '#type' => 'checkbox',
+      '#default_value' => $settings['intelligent_trim'],
+    );
+    
+    // Build the options array for text formats.
+    $formats = filter_formats();
+    $options = array();
+    foreach ($formats as $key => $format) {
+      $options[$key] = $format->name;
+    }
+    // Dropdown of text formats.
+    $element['text_format'] = array(
+      '#title' => t('Text format'),
+      '#type' => 'select',
+      '#empty_option' => t('Select a format'),
+      '#default_value' => $settings['text_format'],
+      '#options' => $options,
+      '#required' => TRUE,
+    );
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function display_text_formats_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $summary = '';
+
+  if ($display['type'] === 'text_formats') {
+    $summary = ($settings['intelligent_trim']) ? 'Intelligent' : 'Dumb';
+    $summary .= ' ' . t('trim length') . ': ' . $settings['trim_length'] . ', ' .
+      t('Text format') . ': ' . $settings['text_format'];
+  }
+
+  return $summary;
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function display_text_formats_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+
+  if ($display['type'] === 'text_formats') {
+    foreach ($items as $delta => $item) {
+      // Do what _text_sanitize() does, knowing it has a text format.
+      $output = check_markup($item['value'], $display['settings']['text_format'], $langcode);
+      
+      // Use the text module's trimming function natively.
+      if ($display['settings']['intelligent_trim']) {
+        $output = text_summary($output, $display['settings']['text_format'], $display['settings']['trim_length']);
+      }
+      else {
+        $output = drupal_substr($output, 0, $display['settings']['trim_length']);
+      }
+      
+      $element[$delta] = array('#markup' => $output);
+    }
+  }
+
+  return $element;
+}

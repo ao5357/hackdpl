@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Module file for the GET parameter views contextual filter.
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function get_arguments_views_api() {
+  return array(
+    'api' => 3,
+  );
+}

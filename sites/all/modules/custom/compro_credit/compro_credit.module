@@ -1,0 +1,58 @@
+<?php
+/**
+* @file
+* Provides a block crediting CP for site design.
+*/
+
+/**
+ * Implements hook_block_info().
+ */
+function compro_credit_block_info() {
+  $blocks['compro_credit'] = array(
+    'info' => t('Compro credit'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function compro_credit_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'compro_credit':
+      $block['content'] = compro_credit_block_content();
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Content for compro credit block.
+ */
+function compro_credit_block_content() {
+  // Render array that returns link and text for block content.
+  $output = array(
+    'compro_link' => array(
+      '#theme' => 'link',
+      '#text' => t('Drupal website design'),
+      '#path' => 'http://www.commercialprogression.com',
+      '#options' => array(
+        'attributes' => array(
+          'class' => array(
+            'compro-credit-link',
+          ),
+        ),
+        'html' => FALSE,
+      ),
+    ),
+    'compro_text' => array(
+      '#markup' => '<span class="compro-credit-text"> ' . t('by Commercial Progression') . '</span>',
+    ),
+  );
+
+  return $output;
+}

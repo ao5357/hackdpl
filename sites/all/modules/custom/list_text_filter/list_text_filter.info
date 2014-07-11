@@ -1,0 +1,3 @@
+name = List Text Filter
+description = A text filter that converts each line of text into a list item.
+core = 7.x

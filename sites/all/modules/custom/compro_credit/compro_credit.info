@@ -1,0 +1,4 @@
+name = Compro Credit
+description = Provides a block crediting CP for site design.
+core = 7.x
+package = compro

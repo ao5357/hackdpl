@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Content Authoring feature.
+ */
+
+include_once 'compro_content_authoring.features.inc';
