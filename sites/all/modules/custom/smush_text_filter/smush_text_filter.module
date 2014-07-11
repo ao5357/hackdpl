@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Module file for smush_text_filter.
+ */
+
+/**
+ * Implements hook_filter_info().
+ */
+function smush_text_filter_filter_info() {
+  $filters['filter_smush'] = array(
+    'title' => t('Smush text filter'),
+    'description' => t('Opening whitespace and double newlines are eliminated from plain text.'),
+    'process callback' => '_smush_text_filter_smush_process',
+    'tips callback' => '_smush_text_filter_filter_list_tips',
+  );
+  $filters['broken_paragraphs'] = array(
+    'title' => t('Turn paragraphs to breaks'),
+    'description' => t('Turn paragraph tags into breaks'),
+    'process callback' => '_smush_text_filter_break_process',
+    'tips callback' => '_smush_text_filter_filter_list_tips',
+  );
+  return $filters;
+}
+
+/**
+ * List text filter process callback.
+ */
+function _smush_text_filter_smush_process($text, $filter) {
+  $text = preg_replace(array(
+    '/(<br ?\/?>[\s]{0,}){1,}/i',
+    '/^<br ?\/?>/i',
+    '/<br ?\/?>$/i',
+  ), array(
+    '<br>',
+    '',
+    '',
+  ), $text);
+  return trim($text);
+}
+
+/**
+ * List text filter process callback.
+ */
+function _smush_text_filter_break_process($text, $filter) {
+  $text = preg_replace(array(
+    '/<p>/i',
+    '/<\/p>/i',
+  ), array(
+    '',
+    '<br>',
+  ), $text);
+  return $text;
+}
+
+/**
+ * Filter tips callback for list text filter.
+ */
+function _smush_text_filter_filter_list_tips($filter, $format, $long = FALSE) {
+  switch ($filter) {
+    case 'filter_smush':
+      return t('Opening whitespace and double newlines will be eliminated.');
+    case 'broken_paragraphs':
+      return t('Turn paragraph tags into breaks');
+  }
+}
