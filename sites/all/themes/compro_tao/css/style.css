@@ -998,6 +998,7 @@ div.pager {
   .region-pre-footer {
     background: #666;
     color: #fff;
+    margin-top: 40px;
   }
     .region-pre-footer > .inner {
       padding: 10px 0;
