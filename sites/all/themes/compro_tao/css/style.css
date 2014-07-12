@@ -148,24 +148,16 @@ h2 {
   padding: 5px 0 0 20px;
   position: relative;
 }
-  h2:before {
-    border-left: 30px solid transparent;
-    border-top: 30px solid #fff;
-    content: ' ';
-    display: block;
-    height: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 0;
-  }
   h2 > a, h2 > a:link, h2 > a:visited {
     color: #fefefe;
   }
 h3 {
-  font-size: 2em;
+  background: #c5e29f;
+  font-size: 1.65em;
   font-weight: 400;
-  margin: 1em 0;
+  margin: .65em 40px .25em 0;
+  padding: 2px 0 0 10px;
+  position: relative;
 }
 h4 {
   font-size: 1.5em;
@@ -354,6 +346,25 @@ svg:not(:root) {
   overflow: hidden;
 }
 
+/* Special notch thing */
+h2:before,
+h3:before,
+.region-nav .block-content > ul.menu:before,
+.notch:before {
+  border-left: 30px solid transparent;
+  border-top: 30px solid #fff;
+  content: ' ';
+  display: block;
+  height: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+}
+  .notch {
+    position: relative;
+  }
+
 /*--Classes/Roles--*/
 .block {}
   .block-content {}
@@ -408,6 +419,21 @@ a.button {
   .grayscale img:hover {
     filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
     -webkit-filter: grayscale(0%);
+  }
+.grid {}
+  .grid h3 {
+    clear: both;
+  }
+  .grid .views-row {
+    float: left;
+    margin: 0 20px 20px 0;
+  }
+    .grid.view-id-media .views-row {
+      height: 100px;
+      width: 100px;
+    }
+  .grid .view-content {
+    overflow: hidden;
   }
 .hide, .element-invisible {
   display: none;
@@ -565,7 +591,7 @@ div.pager {
   z-index: 100000;
 }
   .tipsy-inner {
-    background-color: #0a2436; 
+    background-color: #598628; 
     border-radius: 3px;
     color: #fff;
     max-width: 200px;
@@ -573,16 +599,16 @@ div.pager {
     text-align: center;
   }
   .tipsy-arrow {
-    border: 5px dashed #0a2436;
+    border: 5px dashed #598628;
     height: 0;
     line-height: 0;
     position: absolute;
     width: 0;
   }
-    .tipsy-arrow-n { border-bottom-color: #0a2436; }
-    .tipsy-arrow-s { border-top-color: #0a2436; }
-    .tipsy-arrow-e { border-left-color: #0a2436; }
-    .tipsy-arrow-w { border-right-color: #0a2436; }
+    .tipsy-arrow-n { border-bottom-color: #598628; }
+    .tipsy-arrow-s { border-top-color: #598628; }
+    .tipsy-arrow-e { border-left-color: #598628; }
+    .tipsy-arrow-w { border-right-color: #598628; }
 	.tipsy-n .tipsy-arrow { 
     border-bottom-style: solid;
     border-left-color: transparent;
@@ -733,21 +759,44 @@ div.pager {
         display: block;
         margin: 0 40px;
       }
-  .region-nav {
-    background: #fff;
-    border-top: 1px solid #ccc;
-    border-bottom: 3px solid #0b5182;
-  }
+  .region-nav {}
+    .region-nav .block-content > ul.menu {
+      background: #444;
+      padding: 5px;
+      overflow: hidden;
+      position: relative;
+    }
+      .region-nav .block-content > ul.menu li {
+        margin: 0;
+      }
+      .region-nav .block-content > ul.menu a {
+        border-right: 1px solid #ccc;
+        color: #fff;
+        display: inline-block;
+        margin: 0;
+        padding: 10px 20px;
+      }
+        .region-nav .block-content > ul.menu a:hover,
+        .region-nav .block-content > ul.menu a:active {
+          background: #666;
+        }
   .region-content-top {}
+    .region-content-top .block {
+      margin: 20px 0 0;
+    }
   .region-content {}
     .region-content > .inner {}
+    .region-content .block {
+      margin: 20px 0 0;
+    }
   .region-content-bottom {}
     .region-content-bottom > .inner {}
+    .region-content-bottom .block {
+      margin: 20px 0 0;
+    }
   .region-footer {
     background: #444;
-    background: rgba(34,34,34,.9);
     color: #fff;
-    border-top: 3px solid #0b5182;
   }
     .region-footer > .inner {
       padding: 30px 0;
