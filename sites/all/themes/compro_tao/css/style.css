@@ -832,6 +832,9 @@ div.pager {
         margin: 0;
         padding: 10px 20px;
       }
+        .region-nav .block-content > ul.menu a.active {
+          color: #76a13b;
+        }
         .region-nav .block-content > ul.menu a:hover,
         .region-nav .block-content > ul.menu a:active {
           background: #666;
