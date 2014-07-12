@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Branch feature.
+ */
+
+include_once 'dpl_branch.features.inc';

@@ -34,11 +34,6 @@ function compro_slide_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'flexslider';
   $handler->display->display_options['style_options']['optionset'] = 'slide';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Content: Image(s) (field_image_collection) */
-  $handler->display->display_options['relationships']['field_image_collection_value']['id'] = 'field_image_collection_value';
-  $handler->display->display_options['relationships']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
-  $handler->display->display_options['relationships']['field_image_collection_value']['field'] = 'field_image_collection_value';
-  $handler->display->display_options['relationships']['field_image_collection_value']['delta'] = '0';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['field_link']['id'] = 'field_link';
   $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
@@ -56,7 +51,7 @@ function compro_slide_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Field: Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -131,50 +126,17 @@ function compro_slide_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Field: Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['relationship'] = 'field_image_collection_value';
   $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_image']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => 'slide',
     'image_link' => '',
   );
-  /* Field: Field: Image */
-  $handler->display->display_options['fields']['field_image_1']['id'] = 'field_image_1';
-  $handler->display->display_options['fields']['field_image_1']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image_1']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image_1']['label'] = '';
-  $handler->display->display_options['fields']['field_image_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_1']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_image_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image_1']['settings'] = array(
-    'image_style' => 'slide',
-    'image_link' => 'content',
-  );
-  /* Field: Content: Rendered Node */
-  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
-  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
-  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
-  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
-  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'slide';
-  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
@@ -265,7 +227,7 @@ function compro_slide_views_default_views() {
   $handler->display->display_options['fields']['draggableviews']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['draggableviews']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['draggableviews']['draggableviews']['ajax'] = 0;
-  /* Field: Field: Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -279,7 +241,7 @@ function compro_slide_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_image']['delta_offset'] = '0';
-  /* Field: Field: Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image_1']['id'] = 'field_image_1';
   $handler->display->display_options['fields']['field_image_1']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image_1']['field'] = 'field_image';

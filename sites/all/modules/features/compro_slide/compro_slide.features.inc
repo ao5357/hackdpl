@@ -58,7 +58,7 @@ function compro_slide_image_default_styles() {
     'name' => 'slide',
     'label' => 'Slide',
     'effects' => array(
-      3 => array(
+      1 => array(
         'label' => 'Scale',
         'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
         'effect callback' => 'image_scale_effect',
@@ -68,13 +68,13 @@ function compro_slide_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => 630,
+          'width' => 960,
           'height' => '',
           'upscale' => 1,
         ),
         'weight' => 1,
       ),
-      4 => array(
+      2 => array(
         'label' => 'Crop',
         'help' => 'Cropping will remove portions of an image to make it the specified dimensions.',
         'effect callback' => 'image_crop_effect',
@@ -84,8 +84,8 @@ function compro_slide_image_default_styles() {
         'module' => 'image',
         'name' => 'image_crop',
         'data' => array(
-          'width' => 630,
-          'height' => 360,
+          'width' => 960,
+          'height' => 250,
           'anchor' => 'center-center',
         ),
         'weight' => 2,
@@ -102,11 +102,11 @@ function compro_slide_image_default_styles() {
 function compro_slide_node_info() {
   $items = array(
     'slide' => array(
-      'name' => t('News'),
+      'name' => t('Slide'),
       'base' => 'node_content',
       'description' => t('For the front page and other slideshows, a container for an image, link, text content, and routing information.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Caption'),
       'help' => '',
     ),
   );

@@ -20,7 +20,6 @@ features[field_base][] = field_link
 features[field_instance][] = node-slide-body
 features[field_instance][] = node-slide-field_image
 features[field_instance][] = node-slide-field_link
-features[field_instance][] = node-slide-field_sub_header
 features[flexslider_optionset][] = slide
 features[flexslider_optionset][] = slide_thumbs
 features[image][] = 960_scaled

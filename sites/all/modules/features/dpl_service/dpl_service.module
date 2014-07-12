@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Service feature.
+ */
+
+include_once 'dpl_service.features.inc';
