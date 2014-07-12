@@ -63,7 +63,7 @@ function dpl_branch_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -250,7 +250,106 @@ function dpl_branch_field_default_field_instances() {
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 7,
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-branch-field_hours'
+  $field_instances['node-branch-field_hours'] = array(
+    'bundle' => 'branch',
+    'default_value' => array(
+      0 => array(
+        'starthours' => 1200,
+        'endhours' => 2000,
+        'day' => 1,
+        'daydelta' => 0,
+      ),
+      1 => array(
+        'day' => 2,
+        'daydelta' => 0,
+        'endhours' => 1800,
+        'starthours' => 1000,
+      ),
+      2 => array(
+        'day' => 3,
+        'daydelta' => 0,
+        'endhours' => 2000,
+        'starthours' => 1200,
+      ),
+      3 => array(
+        'day' => 4,
+        'daydelta' => 0,
+        'endhours' => 1800,
+        'starthours' => 1000,
+      ),
+      4 => array(
+        'day' => 5,
+        'daydelta' => 0,
+        'endhours' => 1800,
+        'starthours' => 1200,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'office_hours',
+        'settings' => array(
+          'closedformat' => 'Closed',
+          'compress' => FALSE,
+          'current_status' => array(
+            'closed_text' => 'Currently closed',
+            'open_text' => 'Currently open!',
+            'position' => 'hide',
+          ),
+          'date_first_day' => 0,
+          'daysformat' => 'long',
+          'grouped' => FALSE,
+          'hoursformat' => 0,
+          'separator_day_hours' => ': ',
+          'separator_days' => '<br />',
+          'separator_grouped_days' => ' - ',
+          'separator_hours_hours' => '-',
+          'separator_more_hours' => ', ',
+          'showclosed' => 'all',
+          'timezone_field' => '',
+        ),
+        'type' => 'office_hours',
+        'weight' => 4,
+      ),
+      'grid' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_hours',
+    'label' => 'Hours',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'office_hours',
+      'settings' => array(),
+      'type' => 'office_hours',
+      'weight' => 3,
     ),
   );
 
@@ -321,6 +420,7 @@ function dpl_branch_field_default_field_instances() {
   t('Address');
   t('Body');
   t('Geocode');
+  t('Hours');
   t('Image');
 
   return $field_instances;
