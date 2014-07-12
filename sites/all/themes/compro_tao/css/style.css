@@ -435,6 +435,13 @@ a.button {
   .column-block.column-start {
     clear: left;
   }
+  @media screen and (max-width: 700px) {
+    .column-block {
+      float: none;
+      margin-right: 0;
+      width: inherit;
+    }
+  }
 .field {}
   .field-label {}
     h3.field-label {
@@ -806,7 +813,7 @@ div.pager {
 
   .region-header {
     overflow: hidden;
-    padding: 1em 0 0;
+    padding: 1em 20px 0;
   }
     .region-header .block {
       float: left;
