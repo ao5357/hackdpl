@@ -11,6 +11,86 @@ function dpl_database_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'category';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'Category';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Databases by Category';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'name',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Taxonomy term: Content using Category */
+  $handler->display->display_options['relationships']['reverse_field_category_node']['id'] = 'reverse_field_category_node';
+  $handler->display->display_options['relationships']['reverse_field_category_node']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_category_node']['field'] = 'reverse_field_category_node';
+  $handler->display->display_options['relationships']['reverse_field_category_node']['label'] = 'database';
+  $handler->display->display_options['relationships']['reverse_field_category_node']['required'] = TRUE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'reverse_field_category_node';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Sort criterion: Taxonomy term: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['sorts']['title']['relationship'] = 'reverse_field_category_node';
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'category' => 'category',
+  );
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'reverse_field_category_node';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'database' => 'database',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'databases/category';
+  $export['category'] = $view;
+
+  $view = new view();
   $view->name = 'database';
   $view->description = '';
   $view->tag = 'default';
@@ -75,44 +155,6 @@ function dpl_database_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<a href="/databases/category">View by category</a>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['path'] = 'databases';
-
-  /* Display: Page (Category) */
-  $handler = $view->new_display('page', 'Page (Category)', 'page_1');
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<a href="/databases">View in Alphabetical order</a>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Category */
-  $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
-  $handler->display->display_options['fields']['field_category']['table'] = 'field_data_field_category';
-  $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
-  $handler->display->display_options['fields']['field_category']['label'] = '';
-  $handler->display->display_options['fields']['field_category']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_category']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_category']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_category']['delta_offset'] = '0';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Category (field_category) */
-  $handler->display->display_options['sorts']['field_category_tid']['id'] = 'field_category_tid';
-  $handler->display->display_options['sorts']['field_category_tid']['table'] = 'field_data_field_category';
-  $handler->display->display_options['sorts']['field_category_tid']['field'] = 'field_category_tid';
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
-  $handler->display->display_options['path'] = 'databases/category';
   $export['database'] = $view;
 
   return $export;

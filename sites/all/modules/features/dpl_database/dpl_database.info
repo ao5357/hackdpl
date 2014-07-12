@@ -22,6 +22,7 @@ features[variable][] = menu_parent_database
 features[variable][] = node_options_database
 features[variable][] = node_preview_database
 features[variable][] = node_submitted_database
+features[views_view][] = category
 features[views_view][] = database
 features_exclude[dependencies][blog_feature] = blog_feature
 features_exclude[dependencies][ctools] = ctools
