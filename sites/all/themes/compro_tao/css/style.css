@@ -366,8 +366,23 @@ h3:before,
   }
 
 /*--Classes/Roles--*/
+.alerts {}
+  .alerts.border-block .block-content {
+    padding-top: 20px;
+  }
 .block {}
   .block-content {}
+.border-block {}
+  .border-block .block-title {
+    margin-bottom: 0;
+  }
+  .border-block .block-content {
+    border-color: #598628;
+    border-style: solid;
+    border-width: 0 1px 1px;
+    overflow: hidden;
+    padding: 0 20px 10px;
+  }
 .breadcrumb {
   font-size: 1.15em;
 }
@@ -386,6 +401,37 @@ a.button {
   display: inline-block;
   text-decoration: none;
 }
+.catalog-search {
+  margin: 20px 0 0;
+}
+  .catalog-search .form-item {
+    float: left;
+    margin: 10px 10px 0 0;
+  }
+  .catalog-search .form-item label {
+    display: none;
+  }
+  .catalog-search .form-submit {
+    float: left;
+    margin: 10px 0 0 0;
+  }
+  .catalog-search .form-text {
+    font-size: 1.15em;
+    width: 80%;
+  }
+.column-block {
+  box-sizing: border-box;
+  float: left;
+  margin-right: 2%;
+  width: 49%;
+}
+  .column-block.column-end {
+    clear: right;
+    margin-right: 0;
+  }
+  .column-block.column-start {
+    clear: left;
+  }
 .field {}
   .field-label {}
     h3.field-label {
@@ -398,6 +444,9 @@ a.button {
 }
   .flex-control-nav {
     bottom: -5px;
+  }
+  .slide {
+    clear: both;
   }
 .form-item {
   margin: 1.5em 0;
@@ -782,17 +831,17 @@ div.pager {
         }
   .region-content-top {}
     .region-content-top .block {
-      margin: 20px 0 0;
+      margin-top: 20px;
     }
   .region-content {}
     .region-content > .inner {}
     .region-content .block {
-      margin: 20px 0 0;
+      margin-top: 20px;
     }
   .region-content-bottom {}
     .region-content-bottom > .inner {}
     .region-content-bottom .block {
-      margin: 20px 0 0;
+      margin-top: 20px;
     }
   .region-footer {
     background: #444;
