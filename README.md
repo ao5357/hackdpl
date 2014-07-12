@@ -1,6 +1,6 @@
 # \#hackDPL
 
-The driving force behind \#hackDPL is to create a mobile app for the Detroit Public Library that fulfill's patrons' information needs.
+The driving force behind \#hackDPL is to create a mobile app for the Detroit Public Library that fulfills patrons' information needs.
 
 ## Our Vision
 
@@ -15,7 +15,7 @@ The driving force behind \#hackDPL is to create a mobile app for the Detroit Pub
     * Visual language - extend the brand in reasonable ways
   4. Interoperability
     * URLS - if someone shares a link, it's the same everywhere
-    * Apps - using phonegap or similar
+    * Apps - possible using phonegap or similar
 
 We hope to deliver a Drupal 7-based responsive starter site that any developer can add content to and extend to make it the next version of the DPL site.
 
