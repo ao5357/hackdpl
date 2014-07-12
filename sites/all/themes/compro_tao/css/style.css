@@ -159,7 +159,7 @@ h2 {
     top: 0;
     width: 0;
   }
-  h2 > a {
+  h2 > a, h2 > a:link, h2 > a:visited {
     color: #fefefe;
   }
 h3 {
