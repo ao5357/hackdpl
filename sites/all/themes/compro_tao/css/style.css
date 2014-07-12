@@ -633,8 +633,8 @@ div.pager {
         background: #ccc;
       }
       .pager li > a:hover {
-        background: #0b5182;
-        background: rgba(11,81,130,.5);
+        background: #c5e295;
+        background: rgba(197, 226, 159, .65);
         color: #fff;
       }
   .pager-links li > a {
@@ -722,7 +722,7 @@ div.pager {
       transition: background-color .3s ease-out;
     }
       .tabs > li > a:hover {
-        background: #0b5182;
+        background: #598628;
         color: #fff;
       }
       .tabs > li > a.active {
@@ -978,6 +978,22 @@ div.pager {
     .region-content-bottom .block {
       margin-top: 20px;
     }
+  .region-pre-footer {
+    background: #666;
+    color: #fff;
+  }
+    .region-pre-footer > .inner {
+      padding: 10px 0;
+    }
+    .region-pre-footer .block-content a {
+      border-right: 1px solid;
+      color: #fff;
+      display: inline-block;
+      padding: 5px 10px;
+    }
+      .region-pre-footer .block-content li.last a {
+        border-right: 0 none;
+      }
   .region-footer {
     background: #444;
     color: #fff;

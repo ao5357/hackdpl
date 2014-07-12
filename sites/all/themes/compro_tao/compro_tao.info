@@ -8,6 +8,7 @@ regions[nav] = Navigation
 regions[content_top] = Content Top
 regions[content] = Content
 regions[content_bottom] = Content Bottom
+regions[pre_footer] = Pre-footer
 regions[footer] = Footer
 
 ; Hidden but required
