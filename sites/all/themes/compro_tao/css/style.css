@@ -578,6 +578,11 @@ ul.inline {
 .node {
   margin-bottom: 40px;
 }
+  .node-collection {}
+    .node-collection.view-mode-teaser .field-name-field-image {
+      float: right;
+      margin: 0 0 20px 20px;
+    }
   .node-page {}
   .node-title a {}
 .node-links ul {
@@ -815,6 +820,14 @@ div.pager {
     left: 0;
     margin-top: -5px;
     top: 50%;
+  }
+.view-collection {}
+  .view-collection .views-field-field-image {
+    float: left;
+    margin: 0 10px 10px 0;
+  }
+  .view-collection .views-row {
+    overflow: hidden;
   }
 .view-mode-slide {
   background: #444;
