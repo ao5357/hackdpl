@@ -433,6 +433,9 @@ a.button {
     font-size: 1.15em;
     max-width: inherit;
   }
+  .catalog-search .menu {
+    clear: both;
+  }
   @media screen and (max-width: 935px) {
     .catalog-search .form-text {
       max-width: 260px;
@@ -640,7 +643,12 @@ div.pager {
   .pager-links li > a {
     min-width: 3em;
   }
-.social {}
+.social {
+  margin-bottom: 20px;
+}
+  .social .block-content {
+    overflow: hidden;
+  }
   .social .menu > li {}
     .social .menu > li.last {
       margin: .1em 0;
