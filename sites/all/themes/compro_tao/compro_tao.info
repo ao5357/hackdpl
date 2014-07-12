@@ -21,6 +21,7 @@ stylesheets[screen][] = css/style.css
 ; override tao
 stylesheets[all][] = reset.css
 stylesheets[all][] = base.css
+stylesheets[all][] = system.messages.css
 stylesheets[screen][] = drupal.css
 ; other overrides
 stylesheets[all][] = field_collection.theme.css
