@@ -26,7 +26,7 @@ function blog_feature_views_api($module = NULL, $api = NULL) {
 function blog_feature_node_info() {
   $items = array(
     'blog' => array(
-      'name' => t('Blog entry'),
+      'name' => t('News'),
       'base' => 'node_content',
       'description' => t('Use for multi-user blogs. Every user gets a personal blog.'),
       'has_title' => '1',
