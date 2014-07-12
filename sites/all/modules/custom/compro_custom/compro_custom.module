@@ -36,6 +36,9 @@ function compro_custom_block_info() {
     'compro_custom_copyright' => array(
       'info' => t('Copyright Notice'),
     ),
+    'compro_custom_catalog_search' => array(
+      'info' => t('Catalog Search'),
+    ),
   );
 }
 
@@ -51,9 +54,61 @@ function compro_custom_block_view($delta = '') {
           ', ' . t('All Rights Reserved.');
 
       break;
+    
+    case 'compro_custom_catalog_search':
+      $form = drupal_get_form('compro_custom_catalog_search');
+      // Ugly, but functional way to prevent unwanted parameters.
+      unset($form['form_build_id']);
+      unset($form['form_id']);
+      unset($form['form_token']);
+      
+      $block['subject'] = 'Search books, movies, and more';
+      $block['content'] = $form;
+      
+      break;
   }
 
   return $block;
+}
+
+/**
+ * Form for catalog search.
+ */
+function compro_custom_catalog_search($form, &$form_state) {
+  $form = array(
+    '#action' => 'http://dplopac.detroitpubliclibrary.org/uhtbin/cgisirsi/x/0/0/57/5',
+    '#attributes' => array(
+      'target' => '_blank',
+    ),
+    '#method' => 'get',
+  );
+    $form['searchdata1'] = array(
+      '#type' => 'textfield',
+      '#title' => 'Search',
+      '#default_value' => '',
+    );
+    $form['user_id'] = array(
+      '#type' => 'hidden',
+      '#value' => 'WEBSERVER',
+    );
+    $form['srchfield1'] = array(
+      '#type' => 'hidden',
+      '#value' => 'GENERAL^SUBJECT^GENERAL^^words or phrase',
+    );
+    $form['sort_by'] = array(
+      '#type' => 'hidden',
+      '#value' => '-PBYR',
+    );
+    $form['password'] = array(
+      '#type' => 'hidden',
+      '#value' => 'guest',
+    );
+    $form['Submit now'] = array(
+      '#type' => 'submit',
+      '#value' => t('Search'),
+    );
+
+  return $form;
 }
 
 /**
