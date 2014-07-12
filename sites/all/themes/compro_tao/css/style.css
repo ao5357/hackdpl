@@ -839,6 +839,7 @@ div.pager {
   padding: 10px 20px;
   position: absolute;
   right: 55px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
 }
   .view-mode-slide a {
     color: #fff;
