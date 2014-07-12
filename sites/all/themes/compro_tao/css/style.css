@@ -595,47 +595,9 @@ a.cta {
   border: 1px solid #ccc;
   border-radius: 0;
   margin: 0 0;
-  max-width: 630px;
 }
   .flex-control-nav {
     bottom: -5px;
-  }
-  .flexslider .flex-direction-nav a, .flexslider .flex-direction-nav a {
-    background: #ccc;
-    background: rgba(200,200,200,.8);
-    color: #0b5182;
-    display: block;
-    font-size: 0;
-    height: 40px;
-    padding: 5px 5px;
-    width: inherit;
-  }
-  .flexslider .flex-prev { opacity: .9; left: 0; }
-    .flexslider:hover .flex-prev { opacity: 1; left: 0; }
-  .flexslider .flex-next { opacity: .9; right: 0; }
-    .flexslider:hover .flex-next { opacity: 1; right: 0; }
-  .flexslider .slides > li {
-    position: relative;
-  }
-    .flexslider .slides > li .view-mode-slide {
-      background: #ccc;
-      background: rgba(200,200,200,.8);
-      bottom: 0;
-      left: 0;
-      margin: 0;
-      padding: 15px;
-      position: absolute;
-      right: 0;
-      top: 65%;
-    }
-  @media screen and (max-width: 768px) {
-    .flex-control-nav {
-      bottom: 5px;
-    }
-      .flex-control-paging li a {
-        height: 22px;
-        width: 22px;
-      }
   }
 .form-item {
   margin: 1.5em 0;
