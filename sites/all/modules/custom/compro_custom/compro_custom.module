@@ -63,7 +63,10 @@ function compro_custom_block_view($delta = '') {
       unset($form['form_token']);
       
       $block['subject'] = 'Search books, movies, and more';
-      $block['content'] = $form;
+      $block['content'] = array(
+        'form' => $form,
+        'menu' => menu_tree('menu-utilities'),
+      );
       
       break;
   }

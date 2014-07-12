@@ -853,9 +853,6 @@ div.pager {
     line-height: 1;
     margin: 0 0 .3em;
   }
-    .view-mode-slide h3:after {
-      display: none;
-    }
   @media screen and (max-width: 640px) {
     .view-mode-slide {
       position: static;
