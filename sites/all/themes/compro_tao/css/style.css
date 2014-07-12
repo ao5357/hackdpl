@@ -86,7 +86,7 @@ a:link {
   text-decoration: none;
 }
 a:visited {
-  color: #8a9900
+  color: #8a9900;
 }
 a:hover, a:active {
   text-decoration: underline;
@@ -159,6 +159,9 @@ h2 {
     top: 0;
     width: 0;
   }
+  h2 > a {
+    color: #fefefe;
+  }
 h3 {
   font-size: 2em;
   font-weight: 400;
@@ -206,9 +209,9 @@ form {
     line-height: normal;
   }
   button, input[type="button"], input[type="reset"], input[type="submit"], a.button {
-    background: #0b5182;
+    background: #598628;
     border: 0 none;
-    color: #fff;
+    color: #fefefe;
     cursor: pointer;
     margin: 0 10px 0 0;
     padding: 5px 15px;
@@ -216,8 +219,8 @@ form {
   }
     button:hover, input[type="button"]:hover,
     input[type="reset"]:hover, input[type="submit"]:hover, a.button:hover {
-      background: #0a2436;
-      color: #eee;
+      background: #76a13b;
+      color: #fff;
     }
   button[disabled], input[disabled] {
     cursor: default;
@@ -250,7 +253,7 @@ form {
 /*-Table-*/
 table {
   border-collapse: collapse;
-  border-left: .1em solid #0b5182;
+  border-left: .1em solid #598628;
   border-spacing: 0;
 }
   caption {
@@ -265,18 +268,18 @@ table {
     background: #eee;
   }
   thead {
-    background: #0b5182;
-    color: #fff;
+    background: #598628;
+    color: #fefefe;
     font-weight: bold;
   }
     th {
-      border-right: .1em solid #0b5182;
-      border-bottom: .1em solid #0b5182;
+      border-right: .1em solid #598628;
+      border-bottom: .1em solid #598628;
       padding: .25em 1em;
     }
   td {
-    border-right: .1em solid #0b5182;
-    border-bottom: .1em solid #0b5182;
+    border-right: .1em solid #598628;
+    border-bottom: .1em solid #598628;
     padding: .25em 1em;
   }
 
