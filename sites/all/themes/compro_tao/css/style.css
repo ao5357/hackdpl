@@ -501,6 +501,7 @@ a.button {
   @media screen and (max-width: 600px) {
     .form-item label, .implicit-label {
       clear: both;
+      display: block;
     }
   }
 .grayscale {}
