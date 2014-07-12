@@ -107,6 +107,34 @@ function dpl_service_views_default_views() {
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['block_description'] = 'Services in brief';
+
+  /* Display: Branch Block */
+  $handler = $view->new_display('block', 'Branch Block', 'block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Services Here';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Branch(es) (field_branch) */
+  $handler->display->display_options['arguments']['field_branch_target_id']['id'] = 'field_branch_target_id';
+  $handler->display->display_options['arguments']['field_branch_target_id']['table'] = 'field_data_field_branch';
+  $handler->display->display_options['arguments']['field_branch_target_id']['field'] = 'field_branch_target_id';
+  $handler->display->display_options['arguments']['field_branch_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_branch_target_id']['exception']['value'] = '';
+  $handler->display->display_options['arguments']['field_branch_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_branch_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_branch_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_branch_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_branch_target_id']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_branch_target_id']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['field_branch_target_id']['validate_options']['types'] = array(
+    'branch' => 'branch',
+  );
+  $handler->display->display_options['block_description'] = 'Services by Branch';
   $export['service'] = $view;
 
   return $export;
