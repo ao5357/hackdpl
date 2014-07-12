@@ -193,7 +193,6 @@ form {
   button, input, select, textarea {
     font-size: 100%;
     margin: 0;
-    max-width: 80%;
     vertical-align: baseline;
     *vertical-align: middle;
   }
