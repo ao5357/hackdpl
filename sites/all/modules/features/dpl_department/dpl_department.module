@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Department feature.
+ */
+
+include_once 'dpl_department.features.inc';
