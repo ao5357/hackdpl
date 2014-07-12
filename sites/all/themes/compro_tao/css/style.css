@@ -870,6 +870,9 @@ div.pager {
         margin: 0;
         padding: 10px 20px;
       }
+        .region-nav .block-content > ul.menu li.last a {
+          border-right: 0 none;
+        }
         .region-nav .block-content > ul.menu a.active {
           color: #76a13b;
         }
@@ -877,6 +880,19 @@ div.pager {
         .region-nav .block-content > ul.menu a:active {
           background: #666;
         }
+    @media screen and (max-width: 640px) {
+      .region-nav .block-content > ul.menu a {
+        border-bottom: 1px solid #ccc;
+        border-right: 0 none;
+        display: block;
+      }
+        .region-nav .block-content > ul.menu li.last a {
+          border-bottom: 0 none;
+        }
+      .region-nav .block-content > ul.menu li { 
+        float: none;
+      }
+    }
   .region-content-top {}
     .region-content-top .block {
       margin-top: 20px;
