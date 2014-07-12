@@ -62,6 +62,80 @@ function dpl_branch_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'branch-locator';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'leaflet';
+  $handler->display->display_options['style_options']['data_source'] = 'field_geocode';
+  $handler->display->display_options['style_options']['name_field'] = 'title';
+  $handler->display->display_options['style_options']['map'] = 'OSM Mapnik';
+  $handler->display->display_options['style_options']['zoom']['initialZoom'] = '-1';
+  $handler->display->display_options['style_options']['zoom']['minZoom'] = '0';
+  $handler->display->display_options['style_options']['zoom']['maxZoom'] = '18';
+  $handler->display->display_options['style_options']['vector_display']['stroke'] = 0;
+  $handler->display->display_options['style_options']['vector_display']['fill'] = 0;
+  $handler->display->display_options['style_options']['vector_display']['clickable'] = 0;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Geocode */
+  $handler->display->display_options['fields']['field_geocode']['id'] = 'field_geocode';
+  $handler->display->display_options['fields']['field_geocode']['table'] = 'field_data_field_geocode';
+  $handler->display->display_options['fields']['field_geocode']['field'] = 'field_geocode';
+  $handler->display->display_options['fields']['field_geocode']['label'] = '';
+  $handler->display->display_options['fields']['field_geocode']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_geocode']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_geocode']['click_sort_column'] = 'geom';
+  $handler->display->display_options['fields']['field_geocode']['type'] = 'geofield_latlon';
+  $handler->display->display_options['fields']['field_geocode']['settings'] = array(
+    'data' => 'full',
+    'format' => 'decimal_degrees',
+    'labels' => 0,
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Geocode (field_geocode) - proximity */
+  $handler->display->display_options['sorts']['field_geofield_distance']['id'] = 'field_geofield_distance';
+  $handler->display->display_options['sorts']['field_geofield_distance']['table'] = 'field_data_field_geocode';
+  $handler->display->display_options['sorts']['field_geofield_distance']['field'] = 'field_geofield_distance';
+  $handler->display->display_options['sorts']['field_geofield_distance']['source'] = 'exposed_geofield_filter';
+  $handler->display->display_options['sorts']['field_geofield_distance']['geofield_proximity_manual'] = array(
+    'lat' => '',
+    'lon' => '',
+  );
+  $handler->display->display_options['sorts']['field_geofield_distance']['geofield_proximity_entity_url_field'] = 'field_geocode';
+  $handler->display->display_options['sorts']['field_geofield_distance']['geofield_proximity_current_user_field'] = 'field_geocode';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'branch' => 'branch',
+  );
+  /* Filter criterion: Content: Geocode (field_geocode:lat) */
+  $handler->display->display_options['filters']['field_geocode_lat']['id'] = 'field_geocode_lat';
+  $handler->display->display_options['filters']['field_geocode_lat']['table'] = 'field_data_field_geocode';
+  $handler->display->display_options['filters']['field_geocode_lat']['field'] = 'field_geocode_lat';
+  $handler->display->display_options['filters']['field_geocode_lat']['operator'] = 'not empty';
   $export['branch'] = $view;
 
   return $export;
