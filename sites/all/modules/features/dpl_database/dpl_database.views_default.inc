@@ -87,6 +87,14 @@ function dpl_database_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<a href="/databases">View databases alphabetically</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['path'] = 'databases/category';
   $export['category'] = $view;
 
