@@ -404,6 +404,14 @@ a.button {
 .catalog-search {
   margin: 20px 0 0;
 }
+  .catalog-search .block-title {
+    background: #c5e29f;
+    color: #598628;
+    font-size: 1.5em;
+  }
+  .catalog-search.border-block .block-content {
+    border-color: #c5e29f;
+  }
   .catalog-search .form-item {
     float: left;
     margin: 10px 10px 0 0;
@@ -417,8 +425,14 @@ a.button {
   }
   .catalog-search .form-text {
     font-size: 1.15em;
-    width: 80%;
+    max-width: inherit;
   }
+  @media screen and (max-width: 935px) {
+    .catalog-search .form-text {
+      max-width: 260px;
+    }
+  }
+
 .clear {
   clear: both;
 }
@@ -498,6 +512,13 @@ a.button {
     overflow: hidden;
     text-indent: 100%;
     white-space: nowrap;
+  }
+.highlight {}
+  .highlight .block-content {
+    background: #c5e29f;
+  }
+  .highlight .block-content a {
+    color: #363636;
   }
 ul.inline {
   display: inline;
@@ -822,6 +843,16 @@ div.pager {
         display: block;
         margin: 0 60px 0 0;
       }
+    @media screen and (max-width: 670px) {
+      .region-header .block {
+        float: none;
+      }
+      .region-header a.logo {
+        display: block;
+        margin: 0 20px;
+        text-align: center;
+      }
+    }
   .region-nav {}
     .region-nav .block-content > ul.menu {
       background: #444;
