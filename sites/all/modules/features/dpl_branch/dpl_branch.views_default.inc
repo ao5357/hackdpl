@@ -85,6 +85,8 @@ function dpl_branch_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'leaflet';
   $handler->display->display_options['style_options']['data_source'] = 'field_geocode';
   $handler->display->display_options['style_options']['name_field'] = 'title';
+  $handler->display->display_options['style_options']['description_field'] = 'field_address';
+  $handler->display->display_options['style_options']['view_mode'] = 'teaser';
   $handler->display->display_options['style_options']['map'] = 'OSM Mapnik';
   $handler->display->display_options['style_options']['zoom']['initialZoom'] = '-1';
   $handler->display->display_options['style_options']['zoom']['minZoom'] = '0';
@@ -103,6 +105,8 @@ function dpl_branch_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Geocode */
   $handler->display->display_options['fields']['field_geocode']['id'] = 'field_geocode';
   $handler->display->display_options['fields']['field_geocode']['table'] = 'field_data_field_geocode';
@@ -116,6 +120,19 @@ function dpl_branch_views_default_views() {
     'data' => 'full',
     'format' => 'decimal_degrees',
     'labels' => 0,
+  );
+  /* Field: Content: Address */
+  $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
+  $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
+  $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
+  $handler->display->display_options['fields']['field_address']['label'] = '';
+  $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_address']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_address']['settings'] = array(
+    'use_widget_handlers' => 1,
+    'format_handlers' => array(
+      'address' => 'address',
+    ),
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Geocode (field_geocode) - proximity */
