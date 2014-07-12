@@ -498,6 +498,11 @@ a.button {
     display: inline-block;
     min-width: 8em;
   }
+  @media screen and (max-width: 600px) {
+    .form-item label, .implicit-label {
+      clear: both;
+    }
+  }
 .grayscale {}
   .grayscale img {
     -moz-transition: .3s ease-out;
