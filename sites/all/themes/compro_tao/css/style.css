@@ -783,6 +783,11 @@ div.pager {
     .view-mode-slide h3:after {
       display: none;
     }
+  @media screen and (max-width: 640px) {
+    .view-mode-slide {
+      position: static;
+    }
+  }
 .views-exposed-form {}
   .views-exposed-form .views-exposed-widget .form-submit {
     margin-top: 1.2em;
