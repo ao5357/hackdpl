@@ -4,6 +4,7 @@ core = 7.x
 package = Features
 version = 7.x-0.1
 project = dpl_database
+dependencies[] = compro_slide
 dependencies[] = text
 dependencies[] = views
 features[ctools][] = strongarm:strongarm:1
