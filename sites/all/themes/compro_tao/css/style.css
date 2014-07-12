@@ -37,6 +37,13 @@
   src: url('fonts/SourceSansPro-BoldIt.eot');
   src: url('fonts/SourceSansPro-BoldIt.eot?') format('eot'), url('fonts/SourceSansPro-BoldIt.woff') format('woff');
 }
+@font-face {
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/fontello.eot');
+  src: url('fonts/fontello.eot?') format('eot'), url('fonts/fontello.woff') format('woff');
+}
 
 /**
  * Fixes from normalize.css 
@@ -629,6 +636,59 @@ div.pager {
     min-width: 3em;
   }
 .social {}
+  .social .menu > li {}
+    .social .menu > li.last {
+      margin: .1em 0;
+    }
+  .social .block-content a[href] {
+    display: block;
+    font-size: 0px;
+  }
+    .social .block-content a[href]:before {
+      border: 1px solid;
+      color: #fff;
+      content: ' ';
+      display: block;
+      font-family: 'fontello';
+      font-size: 16px;
+      padding: 10px 12px;
+    }
+  .social .block-content a[href*="facebook.com"]:before {
+    content: 'f';
+  }
+    .social .block-content a[href*="facebook.com"]:hover:before {
+      background-color: #3b5998;
+    }
+  .social .block-content a[href*="google.com"]:before {
+    content: 'g';
+  }
+    .social .block-content a[href*="google.com"]:hover:before {
+      background-color: #d14836;
+    }
+  .social .block-content a[href*="overdrive.com"]:before {
+    content: 'o';
+  }
+    .social .block-content a[href*="overdrive.com"]:hover:before {
+      background-color: #d14836;
+    }
+  .social .block-content a[href*="twitter.com"]:before {
+    content: 't'
+  }
+    .social .block-content a[href*="twitter.com"]:hover:before {
+      background-color: #00aced;
+    }
+  .social .block-content a[href*="youtube.com"]:before {
+    content: 'y';
+  }
+    .social .block-content a[href*="youtube.com"]:hover:before {
+      background-color: #cd332d;
+    }
+
+  @media screen and (max-width: 890px) {
+    .social .menu > li {
+      margin: .1em 1em .1em 0;
+    }
+  }
 .tabs {
   border-bottom: 1px solid;
   font-family: Verdana, sans-serif;
