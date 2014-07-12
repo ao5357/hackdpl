@@ -18,6 +18,7 @@ features[field_base][] = field_geocode
 features[field_instance][] = node-branch-body
 features[field_instance][] = node-branch-field_address
 features[field_instance][] = node-branch-field_geocode
+features[field_instance][] = node-branch-field_image
 features[node][] = branch
 features[variable][] = field_bundle_settings_node__branch
 features[variable][] = menu_options_branch
