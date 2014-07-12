@@ -467,10 +467,7 @@ ul.inline {
   margin-bottom: 40px;
 }
   .node-page {}
-  .node-title a {
-    color: #0b5182;
-    text-decoration: none;
-  }
+  .node-title a {}
 .node-links ul {
   list-style: none;
   margin: 0;
