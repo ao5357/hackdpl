@@ -224,7 +224,7 @@ function dpl_branch_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_geocode',
-    'label' => 'Geocode',
+    'label' => 'Map',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -470,9 +470,9 @@ function dpl_branch_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Address');
   t('Body');
-  t('Geocode');
   t('Hours');
   t('Image');
+  t('Map');
   t('Telephone');
 
   return $field_instances;

@@ -107,7 +107,7 @@ function dpl_branch_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Geocode */
+  /* Field: Content: Map */
   $handler->display->display_options['fields']['field_geocode']['id'] = 'field_geocode';
   $handler->display->display_options['fields']['field_geocode']['table'] = 'field_data_field_geocode';
   $handler->display->display_options['fields']['field_geocode']['field'] = 'field_geocode';
@@ -135,7 +135,7 @@ function dpl_branch_views_default_views() {
     ),
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Geocode (field_geocode) - proximity */
+  /* Sort criterion: Content: Map (field_geocode) - proximity */
   $handler->display->display_options['sorts']['field_geofield_distance']['id'] = 'field_geofield_distance';
   $handler->display->display_options['sorts']['field_geofield_distance']['table'] = 'field_data_field_geocode';
   $handler->display->display_options['sorts']['field_geofield_distance']['field'] = 'field_geofield_distance';
@@ -162,7 +162,7 @@ function dpl_branch_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'branch' => 'branch',
   );
-  /* Filter criterion: Content: Geocode (field_geocode:lat) */
+  /* Filter criterion: Content: Map (field_geocode:lat) */
   $handler->display->display_options['filters']['field_geocode_lat']['id'] = 'field_geocode_lat';
   $handler->display->display_options['filters']['field_geocode_lat']['table'] = 'field_data_field_geocode';
   $handler->display->display_options['filters']['field_geocode_lat']['field'] = 'field_geocode_lat';
