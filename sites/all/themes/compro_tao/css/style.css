@@ -468,6 +468,9 @@ a.button {
   .flex-control-nav {
     bottom: -5px;
   }
+  .flexslider .slides > li {
+    position: relative;
+  }
 .form-item {
   margin: 1.5em 0;
 }
@@ -754,38 +757,31 @@ div.pager {
     top: 50%;
   }
 .view-mode-slide {
-  border-left: 10px solid #0b5182;
+  background: #444;
+  background: rgba(36, 36, 36, .5);
+  color: #fff;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 0;
+  padding: 10px 20px;
+  position: absolute;
+  right: 55px;
 }
   .view-mode-slide a {
+    color: #fff;
     text-decoration: none;
   }
-  .view-mode-slide h2 {
+  .view-mode-slide h3 {
+    background: none;
     border-bottom: 0 none;
+    color: #fff;
     font-size: 1.4em;
     font-weight: bold;
     line-height: 1;
     margin: 0 0 .3em;
   }
-    .view-mode-slide h2 a {
-      color: #0a2436;
-    }
-      .view-mode-slide h2 a:hover {
-        color: #0b5182;
-      }
-  .view-mode-slide .field-type-taxonomy-term-reference {
-    float: left;
-    font-size: 1.1em;
-    margin: 0;
-  }
-    .view-mode-slide .field-type-taxonomy-term-reference a {
-      color: #0b5182;
-    }
-    .view-mode-slide .field-name-field-subclass .field-item:before {
-      color: #444;
-      content: '/';
-      display: inline-block;
-      font-weight: bold;
-      margin: 0 10px;
+    .view-mode-slide h3:after {
+      display: none;
     }
 .views-exposed-form {}
   .views-exposed-form .views-exposed-widget .form-submit {
